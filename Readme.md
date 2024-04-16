@@ -126,6 +126,7 @@ Pour lancer MongoDBCompass il suffit de lancer l'application .
 Notre site internet cible des clients fans de football, pronostiqueurs, parieurs où toutes personnes souhaitant obtenir des informations détaillées ou des idées concernant les capacités footballistiques des équipes actuelles ou des joueurs. Grâce à différentes fonctionnalités du site internet qu'on a spécifié dans les fonctionnalités présentés au début de ce readme.
 
 https://user-images.githubusercontent.com/118398845/234105328-53824579-5cf6-42e0-a4b1-abc6d734b477.mp4
+https://user-images.githubusercontent.com/20240416_235749.mp4
 
 ### Recherche d'un vehicule et envoie d'un message
 
