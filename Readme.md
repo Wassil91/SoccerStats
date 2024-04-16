@@ -126,22 +126,9 @@ Pour lancer MongoDBCompass il suffit de lancer l'application .
 Notre site internet cible des clients fans de football, pronostiqueurs, parieurs où toutes personnes souhaitant obtenir des informations détaillées ou des idées concernant les capacités footballistiques des équipes actuelles ou des joueurs. Grâce à différentes fonctionnalités du site internet qu'on a spécifié dans les fonctionnalités présentés au début de ce readme.
 
 
-[https://github.com/Wassil91/SoccerStats/blob/a277035fcc26072a36e1493606beb0c34d7aba1a/20240416_235749.mp4]
-
-
-
-### Recherche d'un vehicule et envoie d'un message
-
-
-
-https://user-images.githubusercontent.com/118398845/234105285-23b9173f-edde-4a49-84d5-a889e55657e3.mp4
-
-
-
 ## Points blocants/Améliorations potentielles
 
-Au début nous étions partis, sur un scrap que nous avons fait nous-mêmes pour scrappé les données de LaCentrale avec un programme python (__prog_insertScrap_Mongo.py qui se situe a la racine__) et un autre programme d'agreggate (dans le dossier templates __prog_Agregate_collection.py__) qui nous permettait de lier des collections mongodb entre-elles, ainsi pour obtenir des données en live grâce à un bouton qui serait sur notre site qui permettrait d'avoir des données en temps réels. 
+Les points blocants ont été sur l'identification des sources de données qui nous permmettaient de scrappés nos données, donc la partie choix du bon site, nettoyage, ajustement, puis stockage a été relativement longue... surtout que nous avons 3 sources de données différentes. Nous avons plus de 150 collections (tables) dans notre base de données. Donc cette partie a été relativement longue. Il y a eu également les différentes fonctionnalités dans flask qui n'a pas été évidente car notre code app.py (serveur flask) contient plus de 5000 lignes de codes, la moindre petite erreur pouvait tout faire planter. L'assemblage de dash et de flask aussi nous avons passé pas mal de temps la dessus car notre serveur flask étant donné qu'il est trop complexe, robuste, lourd en terme de données nous avons du trouver une alternative pour faire fonctionné dash dans flask. Nous avons eu également du mal sur la partie ML car le rendu n'était pas beau du tout mais nous avons tout de même conservé les scripts ont a eu du mal mais on a quand même reussit à fournir des résultats.
 
-Cependant, LaCentrale entre temps à améliorer son site web, et notre programme de scrap ne fonctionnait plus... étant donné que nous voulions pas perdre trop de temps la dessus, nous avons décidé de trouver une autre solution pour respecter la deadline, d'où l'utilisation de l'outil WebScrapper. Hélas, avec cet outil, nous avons des données brutes et non en live. Le scrap a été le plus gros point blocant en terme de temps pour ce projet. Nous avons eu des problèmes de ressources matérielles par rapport à la puissance de certaines machines, des problèmes de qualité des données lors du scrap il a donc fallut arranger tout cela pour que notre base de données soit qualitative.
 
-En ce qui concerne les améliorations que nous souhaitons faire pour une deuxième version pour l'année prochaine, ça serait d'avoir des données en temps réels de plusieurs sources différentes, d'utiliser un programme d'agreggate entre les collections, d'effectuer une estimation du bien selon certains critères potentiellement avec un peu de IA si nous le pouvons.
+En ce qui concerne les améliorations que nous souhaitons faire pour une deuxième version, ça serait d'avoir encore plus de données par exemple, récupérer les données des srésultats des matchs sous tel température sous tel saison, récupérer les effectifs, récupérer les joueurs bléssés, voir combien il y a eu d'entraineurs dans la saison, les différents transferts au court de la saison, les impacts que ça peut avoir... Pour faire en sorte de pouvoir entrainer un modèle de ML ou DL avec toutes ces ressources là pour prédire le score d'un match par exemple.
