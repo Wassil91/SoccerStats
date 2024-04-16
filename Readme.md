@@ -60,7 +60,7 @@ Sur ce projet , il faut installer :
    pip install -r requirements.txt
    
    ``````
-# Lancement du Projet  ![icons8-racing-car-48](https://user-images.githubusercontent.com/118398845/214806718-ba2df5ba-7db1-43f1-b2ee-69bc30ba779d.png)
+# Lancement du Projet  !(https://fecafoot-officiel.com/wp-content/uploads/2020/01/ballon-foot-dessin-png-7-150x150.png))
 
 Une fois toute les installations et configurations effectuées nous allons executer le projet : 
 
