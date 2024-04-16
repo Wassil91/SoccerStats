@@ -33,7 +33,7 @@ Les différentes étapes sont :
  - Création serveur Dash, tous les dashboards de chaque championant et un rendement esthétique
  - Liaison Flask et Dash
  - Rédaction Github
- - [Remplissage Trello](https://trello.com/b/vPfsPYIJ/soccerstats)
+ - [Remplissage Trello](https://trello.com/b/vPfsPYIJ/soccerstats). Vous devrez vous créer un compte ou vous connectez.
  - Amélioration potentielle pour une 2ème version
 
 * *Ce Read me a été réalisé sous windows 11 mais est identique pour Windows 10 , Linux et Mac.* 
