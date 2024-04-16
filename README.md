@@ -28,6 +28,7 @@ Les différentes étapes sont :
  - Adapter le csv à notre convenance
  - Créer un csv avec toutes les informations récupérées 
  - Ajouter le csv ou les données scrappés dans la base mongodb compass grâce aux programmes python
+ - Enrichir la base de données grâce aux run des programmes pythons dans le dossier scripts_py.py
  - Création serveur Flask, liaison serveur flask + site web & conception du site web avec toutes les fonctionnalitées et un rendement esthétique
  - Création serveur Dash, tous les dashboards de chaque championant et un rendement esthétique
  - Liaison Flask et Dash
