@@ -50,6 +50,7 @@ Sur ce projet , il faut installer :
 - [Installer MongoSH](https://www.mongodb.com/try/download/shell)
 - [Installer Python](https://www.python.org/downloads/)
 - [Installer Pandas](https://pandas.pydata.org/pandas-docs/stable/getting_started/install.html)
+- [Installer VisualStudio Code](https://code.visualstudio.com/download)
 
   **En ligne de commande**
   
