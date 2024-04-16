@@ -71,9 +71,12 @@ L'IDE que nous utilisons est VisualStudio Code.
 - [Installer VisualStudio Code](https://code.visualstudio.com/download)
 
 - Faire un open folder du dossier du site, /!\ attention à bien respecter l'architecture des dossiers et fichiers pour bien faire fonctionner le projet.
-- Par exemple dans un dossier appelé dans notre cas "Ydays2", dans ce dossier il doit y avoir un dossier "site", dans le dossier "site", il doit y avoir un fichier "app.py" et un dossier appelé "templates". Dans le dossier "templates", il doit y avoir tous les fichiers pythons, html,php, csv. 
-- Pour lancer le site, il suffira de lancer le fichier "app.py". Lors du run du fichier, veillez à être dans le bon chemin selon l'endroit ou vous avez stocké vos fichiers et dossiers ! 
+- Par exemple dans un dossier appelé "Ydays_M2", dans ce dossier il doit y avoir 3 sous dossier "scripts_py", "static", "templates", un fichier "app.py".
+- Pour lancer l'interface web, il suffira de lancer le fichier "app.py" depuis un terminal ou cmd peu importe votre machine, veillez à bien mettre le chemin dans laquelle il y a le fichier "app.py" donc dans notre cas il faudra faire dans le cmd : "cd : chemin_vers_dossier_contenant_app.py", puis tout simplement "python app.py" pour lancer l'application web.
+- Lors du run du fichier, veillez à être dans le bon chemin selon l'endroit ou vous avez stocké vos fichiers et dossiers ! 
 - Récupérer le lien généré par "app.py" qui est " http://127.0.0.1:5000" et collé dans un navigateur (de préférence Chrome --> meilleur rendu esthétique)
+- Ensuite ouvrer VSCODE et lancé le scripts "dash_L1_all_saisons_matchs.py" dans le dossier "scripts_py".
+- Retourner sur l'url récupérer de l'app.py à savoir "http://127.0.0.1:5000" et désormais tout le site sera fonctionnel.
 
 
 ## Lancement MongoDB et MongoSH !
@@ -93,13 +96,13 @@ Une fois MongoSh lancer vous allez être diriger vers cette page :
 Appuyer sur la touche "__ENTRER__" ![icons8-touche-entrée-48](https://user-images.githubusercontent.com/118398845/214808187-4534a048-76f7-4940-aeb6-00c5c5ca07f6.png) pour faire venir la connexion string
 
 - Faire un "show dbs" pour voir les bases de données qu'il y a dans notre base de données 
-- Faire un "use Projet_Ydays" par exemple pour se connecter à cette base de données
+- Faire un "use SoccerStats" par exemple pour se connecter à cette base de données
 - Faire un "show collections" pour voir les collections dans cette base de données
-- Faire un "db.Contact.find({})" pour voir ce qu'il y a dans la collection "Contact"
+- Faire un "db.matchs_PL.find({})" pour voir ce qu'il y a dans la collection "matchs_PL"
 
 ## Insertion des données dans la Base Mongodb Compass
 
-- Ouvrez tout d'abord les fichiers **prog_insert_scrap.py** , **prog_insert_msgContact.py** puis inserrez votre connexion correpondante qui se trouve dans votre Mongosh (_dans notre exemple nous allons utilisé la connexion du groupe_):
+- Pour avoir la base de données bien ajustée vous devez executé tous les scripts du dossier **"scripts_py"** sauf les fichiers contenant **"%Dash%"**, les fichiers **"tst, test%"**, **"train_model"** puis insérer votre connexion correpondante qui se trouve dans votre Mongosh (_dans notre exemple nous allons utilisé la connexion du groupe_):
 ![image](https://user-images.githubusercontent.com/118398845/214821948-01842b1f-5ea9-47f3-97df-b0553b917c20.png).
 
 - Puis vous allez remplacer par votre connexion a cette endroit du script: 
@@ -114,9 +117,9 @@ Pour lancer MongoDBCompass il suffit de lancer l'application .
 
 ![image](https://user-images.githubusercontent.com/118398845/212063294-919a8d34-7a2b-4203-b712-5ee4a5104ec0.png)
 
-- Visualiser l'état des données dans la base "Projet_Ydays"
-- Visualiser la collection "all_caract_voiture"
-- Visualiser la collection "Contact"
+- Visualiser l'état des données dans la base "SoccerStats"
+- Visualiser toutes les collections 
+
 
 
 ## Site web
