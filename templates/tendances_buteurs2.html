@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tendances des buteurs</title>
+    <!-- Inclure les styles CSS si nécessaire -->
+    <style>
+        /* Définir les styles CSS ici */
+    </style>
+</head>
+<body>
+    <h1>Tendances des buteurs</h1>
+
+    <h2>Top buteurs des derniers matchs :</h2>
+    <ul>
+        {% for joueur, buts in top_buteurs %}
+            <li>{{ joueur }} - {{ buts }} buts</li>
+        {% endfor %}
+    </ul>
+
+    <h2>Évolution des buts marqués par les principaux buteurs :</h2>
+    <!-- Div pour afficher le graphique -->
+    <div id="graphique-buteurs"></div>
+
+    <!-- Inclure les scripts JavaScript si nécessaire -->
+    <script>
+        // Définir les scripts JavaScript ici pour générer le graphique
+    </script>
+</body>
+</html>

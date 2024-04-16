@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Soccer &mdash; Website by Colorlib</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap/bootstrap.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery-ui.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.theme.default.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/jquery.fancybox.min.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap-datepicker.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='fonts/flaticon/font/flaticon.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/aos.css') }}">
+  <style>
+    .bg-custom {
+        background-color: #333; /* Couleur de fond personnalisée */
+    }
+    .silver-text {
+            color: silver; /* Couleur argentée */
+        }
+    .site-menu .active:after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 3px;
+    background-color: #fff; /* Couleur du tiret */
+    position: absolute;
+    bottom: -5px; /* Ajustez la position verticale selon vos besoins */
+    left: 0;
+  }
+  .classement-grid {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto auto auto auto auto;
+    grid-column-gap: 10px;
+    border-collapse: collapse; /* Ajout pour supprimer les bordures */
+  }
+
+  .position,
+  .logo,
+  .equipe,
+  .pts,
+  .joues,
+  .v,
+  .n,
+  .p,
+  .bp,
+  .be {
+    text-align: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    color : white;
+    border: none; /* Supprimer les bordures */
+  }
+</style>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+  
+    <header class="site-navbar py-4" role="banner">
+        <div class="container"> <!-- Retour à la classe container sans mx-auto -->
+            <div class="row justify-content-center align-items-center"> <!-- Utilisation des classes Bootstrap pour aligner les éléments -->
+                <div class="col-lg-2 col-md-4 col-6">
+                    <div class="site-logo">
+                        <a href="{{ url_for('index') }}">
+                            <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Logo">
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-8 col-md-8 d-none d-lg-block">
+                    <nav class="site-navigation text-center" role="navigation">
+                        <ul class="site-menu main-menu js-clone-nav">
+                            <li {% if active_tab == 'home' %} class="active" {% endif %}>
+                                <a href="{{ url_for('index') }}" class="nav-link">Home</a>
+                            </li>
+                            <li {% if active_tab == 'matches' %} class="active" {% endif %}>
+                                <a href="{{ url_for('matches') }}" class="nav-link">Ligue 1</a>
+                            </li>
+                            <li {% if active_tab == 'liga' %} class="active" {% endif %}>
+                                <a href="{{ url_for('liga') }}" class="nav-link">Liga</a>
+                            </li>
+                            <li {% if active_tab == 'serieA' %} class="active" {% endif %}>
+                                <a href="{{ url_for('serieA') }}" class="nav-link">Série A</a>
+                            </li>
+                            <li {% if active_tab == 'bundesliga' %} class="active" {% endif %}>
+                                <a href="{{ url_for('bundesliga') }}" class="nav-link">Bundesliga</a>
+                            </li>
+                            <li {% if active_tab == 'PL' %} class="active" {% endif %}>
+                                <a href="{{ url_for('PL') }}" class="nav-link">PL</a>
+                            </li>
+                            <li>
+                              <a href="{{ url_for('dashboard') }}" class="nav-link">Dashboard</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-lg-2 col-md-4 col-6 text-right">
+                    <a href="#" class="site-menu-toggle js-menu-toggle text-black float-right text-white">
+                        <span class="icon-menu h3 text-white"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="hero overlay" style="background-image: url('https://www.nj.com/resizer/3cuY8JaFaz1HY02JQlYvJIhsIVw=/1280x0/smart/cloudfront-us-east-1.images.arcpublishing.com/advancelocal/FU25SWESNRAYJF2QMVJCAMK7QY.jpg');">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-5 mx-auto text-center">
+            <h1 class="text-white">Série A </h1>
+            <p>Bienvenue dans le championnat de SerieA</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    
+<!--     
+    <div class="container">
+      
+
+      <div class="row">
+        <div class="col-lg-12">
+          
+          <div class="d-flex team-vs">
+            <span class="score">4-1</span>
+            <div class="team-1 w-50">
+              <div class="team-details w-100 text-center">
+                <img src="{{ url_for('static', filename='images/logo_1.png') }}" alt="Image" class="img-fluid">
+                <h3>LA LEGA</h3>
+              </div>
+            </div>
+            <div class="team-2 w-50">
+              <div class="team-details w-100 text-center">
+                <img src="{{ url_for('static', filename='images/logo_2.png') }}" alt="Image" class="img-fluid">
+                <h3>JUVENDU</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> -->
+  
+
+    <div class="site-section bg-dark">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <div class="widget-next-match">
+              <div class="widget-title">
+                <h3>Last Matches</h3>
+              </div>
+              <div class="widget-body mb-3">
+                {% if last_matches %}
+                  {% for match in last_matches %}
+                    <div class="widget-vs">
+                      <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                        <div class="logo-team-1" style="width: 10%;">
+                          {% if match.Equipe_Domicile in logos_equipe_serieA %}
+                            <img src="{{ logos_equipe_serieA[match.Equipe_Domicile] }}" alt="{{ match.Equipe_Domicile }} logo" style="max-height: 30px;">
+                          {% else %}
+                            <h4>Logo non disponible</h4>
+                          {% endif %}
+                        </div>
+                        <div class="team-1 text-center" style="width: 30%;">
+                          <h3>{{ match.Equipe_Domicile }}</h3>
+                        </div>
+                        <div class="text-center" style="width: 10%;">
+                          <span class="vs"><span style="color: white;">{{ match.Score }}</span></span>
+                        </div>
+                        <div class="team-2 text-center" style="width: 30%;">
+                          <h3>{{ match.Equipe_Extérieur }}</h3>
+                        </div>
+                        <div class="logo-team-2" style="width: 10%;">
+                          {% if match.Equipe_Extérieur in logos_equipe_serieA %}
+                            <img src="{{ logos_equipe_serieA[match.Equipe_Extérieur] }}" alt="{{ match.Equipe_Extérieur }} logo" style="max-height: 30px;">
+                          {% else %}
+                            <h4>Logo non disponible</h4>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  <p>No last matches found.</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+
+    
+    
+    <div class="site-section bg-dark">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <div class="widget-next-match">
+              <div class="widget-title">
+                <h3>Next Matches</h3>
+              </div>
+              <div class="widget-body mb-3">
+                {% if next_matches %}
+                  {% for match in next_matches %}
+                    <div class="widget-vs">
+                      <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                        <div class="logo-team-1" style="width: 10%;">
+                          {% if match.Equipe_Domicile in logos_equipe_serieA %}
+                            <img src="{{ logos_equipe_serieA[match.Equipe_Domicile] }}" alt="{{ match.Equipe_Domicile }} logo" style="max-height: 30px;">
+                          {% else %}
+                            <h4>Logo non disponible</h4>
+                          {% endif %}
+                        </div>
+                        <div class="team-1 text-center" style="width: 33%;">
+                          <h3>{{ match.Equipe_Domicile }}</h3>
+                        </div>
+                        <div class="text-center" style="width: 33%;">
+                          <span class="vs"><span style="color: red;">{{ match.Score }}</span></span>
+                        </div>
+                        <div class="team-2 text-center" style="width: 33%;">
+                          <h3>{{ match.Equipe_Extérieur }}</h3>
+                        </div>
+                        <div class="logo-team-2" style="width: 10%;">
+                          {% if match.Equipe_Extérieur in logos_equipe_serieA %}
+                            <img src="{{ logos_equipe_serieA[match.Equipe_Extérieur] }}" alt="{{ match.Equipe_Extérieur }} logo" style="max-height: 30px;">
+                          {% else %}
+                            <h4>Logo non disponible</h4>
+                          {% endif %}
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  <p>No upcoming matches found.</p>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    
+    <div class="site-section bg-dark">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <div class="widget-next-match">
+              <div class="widget-title">
+                <h3>Classement de la Série A</h3>
+              </div>
+              <div class="widget-body mb-3">
+                <div class="classement-grid">
+                  <div class="position">Position</div>
+                  <div class="logo">Logo</div>
+                  <div class="equipe">Équipe</div>
+                  <div class="pts">Pts</div>
+                  <div class="joues">Joués</div>
+                  <div class="v">V</div>
+                  <div class="n">N</div>
+                  <div class="p">P</div>
+                  <div class="bp">BM</div>
+                  <div class="be">BE</div>
+                  {% if classement %}
+                    {% for team in classement %}
+                      <div class="position">{{ team.Position }}</div>
+                      <div class="logo">
+                        {% if team.Logo %}
+                          <img src="{{ team.Logo }}" alt="{{ team.Equipe }} logo" style="max-height: 30px;">
+                        {% else %}
+                          <h4>Logo non disponible</h4>
+                        {% endif %}
+                      </div>
+                      <div class="equipe">{{ team.Equipe }}</div>
+                      <div class="pts">{{ team.Pts }}</div>
+                      <div class="joues">{{ team.J }}</div>
+                      <div class="v">{{ team.G }}</div>
+                      <div class="n">{{ team.N }}</div>
+                      <div class="p">{{ team.P }}</div>
+                      <div class="bp">{{ team.BP }}</div>
+                      <div class="be">{{ team.BC }}</div>
+                    {% endfor %}
+                  {% else %}
+                    <p>No teams found.</p>
+                  {% endif %}
+                </div>
+              </div>
+              <div class="text-center">
+                <button id="predictRankingButton" class="btn btn-primary">Obtenir une prédiction du classement final</button>
+                <form action="/tendances_equipes3" method="get">
+                  <button type="submit" class="btn btn-primary">Afficher les tendances des équipes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="site-section bg-dark">
+      <div class="container">
+        <div class="row mb-5">
+          <div class="col-lg-12">
+            <div class="widget-next-match">
+              <div class="widget-title">
+                <h3>Meilleurs buteurs</h3>
+              </div>
+              <div class="widget-body mb-3">
+                <input type="hidden" id="currentMatchday" value="27">
+                <div class="widget-vs">
+                  <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                    <div class="text-center" style="width: 10%;">
+                      <h4 style="color:red">Position</h4>
+                    </div>
+                    <div class="text-center" style="width: 25%;">
+                      <h4 style="color:red">Joueur</h4>
+                    </div>
+                    <div class="text-center" style="width: 25%;">
+                      <h4 style="color:red">Équipe</h4>
+                    </div>
+                    <div class="text-center" style="width: 15%;">
+                      <h4 style="color:red">Buts</h4>
+                    </div>
+                    <div class="text-center" style="width: 25%;">
+                      <h4 style="color:red">Matchs</h4>
+                    </div>
+                  </div>
+                </div>
+                {% if buteurs %}
+                  {% for player in buteurs %}
+                    <div class="widget-vs">
+                      <div class="d-flex align-items-center justify-content-around justify-content-between w-100">
+                        <div class="text-center" style="width: 10%;">
+                          <h3>{{ player.Position }}</h3>
+                        </div>
+                        <div class="text-center" style="width: 25%;">
+                          {% if player.Logo %}
+                            <img src="{{ player.Logo }}" alt="{{ player.Joueur }} logo" style="max-height: 30px;">
+                            <h3>{{ player.Joueur }}</h3>
+                          {% else %}
+                            <h4>Logo non disponible</h4>
+                          {% endif %}
+                        </div>
+                        <div class="text-center" style="width: 25%;">
+                          <h3>{{ player.Equipe }}</h3>
+                        </div>
+                        <div class="text-center" style="width: 15%;">
+                          <h3>{{ player.Buts }}</h3>
+                        </div>
+                        <div class="text-center" style="width: 25%;">
+                          <h3>{{ player.Matchs }}</h3>
+                        </div>
+                      </div>
+                    </div>
+                  {% endfor %}
+                {% else %}
+                  <p>No top scorers found.</p>
+                {% endif %}
+              </div>
+              <div class="text-center">
+                <a href="/tendances_buteurs3" class="btn btn-primary">Afficher les tendances des buteurs</a>
+                <button id="predictButton" class="btn btn-primary">Obtenir une prédiction</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<div class="site-section bg-dark">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-12">
+        <div class="bg-custom p-4 rounded">
+          <div class="widget-title">
+            <h3 style="color:white;">Calendrier de la Série A</h3>
+          </div>
+          <div class="widget-body">
+            <form action="/serieA/matches_by_journee" method="post">
+              <label for="journee" style="color:white">Choisir une journée :</label>
+              <select name="journee" id="journee" class="form-select">
+                {% for i in range(1, 39) %}
+                <option value="{{ i }}">Journée {{ i }}</option>
+                {% endfor %}
+              </select>
+              <button type="submit" class="btn btn-primary">Afficher les matchs</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/bootstrap-datepicker.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/jquery.fancybox.min.js"></script>
+  <script src="js/jquery.sticky.js"></script>
+  <script src="js/jquery.mb.YTPlayer.min.js"></script>
+
+
+  <script src="js/main.js"></script>
+  <script>
+function getRankingPrediction() {
+            // Effectuer une requête POST à la route /predict_ranking
+            fetch('/predict_ranking3', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+            .then(response => response.json())
+            .then(data => {
+                // Trier les équipes en fonction du nombre de points (Pts) en ordre décroissant
+                data.sort((a, b) => b.Pts - a.Pts);
+
+                // Construire une chaîne de texte pour afficher les prédictions
+                let predictionText = "Prédictions du classement final de la Série A : \n";
+                data.forEach((team, index) => {
+                    // Ajouter 1 à l'index pour obtenir le classement réel (1ère place, 2e place, etc.)
+                    const position = index + 1;
+                    predictionText += `${position}. ${team["Equipe"]} - Pts: ${team["Pts"]}, Diff: ${team["Diff"]}, BM: ${team["BP"]}, BE: ${team["BC"]} \n`;
+                });
+
+                // Afficher les prédictions dans une boîte de dialogue
+                alert(predictionText);
+            })
+            .catch(error => {
+                console.error('Erreur lors de la récupération des prédictions du classement :', error);
+            });
+        }
+
+        // Événement lorsque le bouton "Obtenir une prédiction du classement" est cliqué
+        document.getElementById('predictRankingButton').addEventListener('click', function() {
+            // Appeler la fonction pour obtenir la prédiction du classement final de la Ligue 1
+            getRankingPrediction();
+        });
+
+
+  </script>
+
+  <script>
+    // Fonction pour obtenir une prédiction des meilleurs buteurs
+    function getTopScorersPrediction(currentMatchday) {
+        // Effectuer une requête POST à la route /predict_top_scorers avec le numéro de la journée actuelle
+        fetch(`/predict_top_scorers3/${currentMatchday}`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Afficher les prédictions dans la console pour vérification
+            console.log(data);
+            // Insérer les prédictions dans la page HTML
+            // Vous pouvez modifier cette partie pour afficher les prédictions où vous le souhaitez dans votre page HTML
+            alert("Prédictions des meilleurs buteurs : " + data.join("\n"));
+        })
+        .catch(error => {
+            console.error('Erreur lors de la récupération des prédictions :', error);
+        });
+    }
+
+    // Événement lorsque le bouton "Obtenir une prédiction" est cliqué
+    document.getElementById('predictButton').addEventListener('click', function() {
+        // Récupérer le numéro de la journée actuelle depuis votre interface utilisateur
+        // Supposons que vous stockiez ce numéro dans un élément avec l'ID "currentMatchday"
+        const currentMatchday = document.getElementById('currentMatchday').value;
+
+        // Appeler la fonction pour obtenir la prédiction des meilleurs buteurs en fournissant le numéro de la journée actuelle
+        getTopScorersPrediction(currentMatchday);
+    });
+</script>
+
+</body>
+
+</html>

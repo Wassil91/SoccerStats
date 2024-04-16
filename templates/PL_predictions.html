@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prévisions des matchs</title>
+  <style>
+    /* Ajoutez vos styles CSS ici */
+  </style>
+</head>
+<body>
+  <h1>Prévisions des matchs</h1>
+  <table>
+    <thead>
+      <tr>
+        <th>Équipe Domicile</th>
+        <th>Équipe Extérieur</th>
+        <th>Pourcentage de victoire domicile (%)</th>
+        <th>Pourcentage de victoire extérieur (%)</th>
+        <th>Pourcentage de match nul (%)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for prediction in predictions %}
+      <tr>
+        <td>{{ prediction['equipe_domicile'] }}</td>
+        <td>{{ prediction['equipe_exterieur'] }}</td>
+        <td>{{ prediction['pourcentage_victoire_domicile'] }}</td>
+        <td>{{ prediction['pourcentage_victoire_exterieur'] }}</td>
+        <td>{{ prediction['pourcentage_match_nul'] }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</body>
+</html>

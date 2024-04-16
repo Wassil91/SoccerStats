@@ -1,0 +1,20 @@
+logos_ligue_1 = {
+    "Paris SG": "https://seatpick.com/_next/image?url=https:%2F%2Fres.cloudinary.com%2Fdfwt0gh29%2Fimage%2Fupload%2Fc_pad%2Ch_170%2Cw_170%2Flogos%2Fligue1%2Fpsg&w=256&q=75",
+    "Marseille": "https://betmonitor.com/amar/logo/Football/Marseille.png",
+    "Lyon": "https://fullmatchsreplay.com/team/lyon.png",
+    "Monaco": "https://www.score.fr/uploads/63d150f65c531-Monaco-144.png",
+    "Lille": "https://1.bp.blogspot.com/-pPZv7PjsE8w/YHZTT21C08I/AAAAAAAACo4/eeA-Kyt0BScxqoCOTaibPXAYLnzY8wqRwCLcBGAsYHQ/s72-c/Lille%2Bfc%2BOSC%2Bfrance%2Bligue%2B1%2Bteams.png",
+    "Rennes": "https://cdn.sportmonks.com/images/soccer/teams/22/598.png",
+    "Montpellier": "https://cdn.sportmonks.com/images/soccer/teams/5/581.png",
+    "Brest": "https://png100.maxifoot-live.com/brest.png",
+    "Lens": "https://cdn.sportmonks.com/images/soccer/teams/15/271.png",
+    "Le Havre": "https://cdn.footystats.org/img/teams/france-le-havre-ac.png",
+    "Nice": "https://ftsdlskits.com/wp-content/uploads/2023/02/OGC-Nice-logo.png",
+    "Metz": "https://1000logos.net/wp-content/uploads/2022/01/FC-Metz-logo-140x79.png",
+    "Strasbourg": "https://assets.b365api.com/images/team/b/1659.png",
+    "Lorient": "https://tmssl.akamaized.net/images/wappen/head/1158.png?lm=1406642498",
+    "Nantes": "https://www.score.fr/uploads/63d15154a5a94-Nantes-144.png",
+    "Toulouse": "https://content.sportslogos.net/logos/129/4064/thumbs/7shszng326awpet96flvcy848.gif",
+    "Reims": "https://cdn.sportmonks.com/images/soccer/teams/4/1028.png",
+    "Clermont F.": "https://i0.wp.com/sportleaguemaps.com/wp-content/uploads/Clermont.jpg?ssl=1"
+}

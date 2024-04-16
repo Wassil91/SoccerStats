@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <!-- Ajoutez ici les liens vers les styles CSS nécessaires -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <!-- Ajoutez ici le code HTML pour la barre de navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Dashboard</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/dashboard/L1">L1</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Liga">Liga</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/SerieA">SerieA</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/Bundes">Bundes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/PL">PL</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Ajoutez ici le conteneur pour afficher le contenu de votre application Dash -->
+    <div id="dash-content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+    <!-- Ajoutez ici les scripts JavaScript nécessaires -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
