@@ -102,7 +102,7 @@ Appuyer sur la touche "__ENTRER__" ![icons8-touche-entrée-48](https://user-imag
 
 ## Insertion des données dans la Base Mongodb Compass
 
-- Pour avoir la base de données bien ajustée vous devez executé tous les scripts du dossier **"scripts_py"** sauf les fichiers contenant **"%Dash%"**, les fichiers **"tst, test%"**, **"train_model"** puis insérer votre connexion correpondante qui se trouve dans votre Mongosh (_dans notre exemple nous allons utilisé la connexion du groupe_):
+- Pour avoir la base de données bien ajustée vous devez executé tous les scripts du dossier **"scripts_py"** sauf les fichiers contenant **"%Dash%"**, les fichiers **"tst, test%"**, **"train_model"**, ou commencant par **"import%, export%, logos%"** puis insérer votre connexion correpondante qui se trouve dans votre Mongosh (_dans notre exemple nous allons utilisé la connexion du groupe_):
 ![image](https://user-images.githubusercontent.com/118398845/214821948-01842b1f-5ea9-47f3-97df-b0553b917c20.png).
 
 - Puis vous allez remplacer par votre connexion a cette endroit du script: 
@@ -124,8 +124,7 @@ Pour lancer MongoDBCompass il suffit de lancer l'application .
 
 ## Site web
 
-Notre site internet cible pour le moment des clients de la centrale où toutes personnes souhaitant obtenir des informations détaillées pour potentiellement vendre son véhicule ou acheter un véhicule. Grâce à une capacité de filtre dans "Recherchez votre véhicule" sur notre site, le client pourra mettre le plus d'informations possible selon ce qu'il connait pour chercher la voiture qu'il lui faut, ou s'il veut avoir des informations dessus qu'il mette les informations qu'il souhaite.
-De plus, si un client souhaite nous contacter, il est tout à fait possible. Il suffit d'aller dans "Contact".
+Notre site internet cible des clients fans de football, pronostiqueurs, parieurs où toutes personnes souhaitant obtenir des informations détaillées ou des idées concernant les capacités footballistiques des équipes actuelles ou des joueurs. Grâce à différentes fonctionnalités du site internet qu'on a spécifié dans les fonctionnalités présentés au début de ce readme.
 
 https://user-images.githubusercontent.com/118398845/234105328-53824579-5cf6-42e0-a4b1-abc6d734b477.mp4
 
