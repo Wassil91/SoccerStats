@@ -1,0 +1,17 @@
+pandas
+Flask pymongo
+bs4
+pymongo
+random
+DateTime
+matplotlib
+seaborn
+python-dateutil
+joblib
+dash_bootstrap_components
+dash
+dcc
+html
+callback_context
+plotly
+sklearn
