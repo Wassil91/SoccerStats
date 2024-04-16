@@ -7,7 +7,7 @@ Dans le cadre du module Ydays pour cette 1ère version, nous avons décidé de c
   - Page d'accueil qui permet de mettre à jour chaque championnat à la dernière journée
   - Navbar 5 championnats européen (Ligue 1, Liga, Bundesliga, Série A, PL)
   - Pour chaque championnat :
-      - Dernièers matchs joués
+      - Derniers matchs joués
       - Prochains matchs
       - Classement actuel des équipes
       - Affichage tendances des équipes actuels
